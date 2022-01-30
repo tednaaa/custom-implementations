@@ -8,7 +8,9 @@ describe('push function', () => {
   `('should add items from the end of array', ({ mockArray, newElementsArray, expectedLength }) => {
     const updatedArray = [...mockArray, ...newElementsArray];
 
-    expect(push(mockArray, ...newElementsArray)).toEqual(updatedArray);
-    expect(updatedArray.length).toEqual(expectedLength);
+    push(mockArray, ...newElementsArray);
+
+    expect(mockArray).toEqual(updatedArray);
+    expect(mockArray.length).toEqual(expectedLength);
   });
 });

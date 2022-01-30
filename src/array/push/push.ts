@@ -1,5 +1,10 @@
-export const push = <T>(array: T[], ...items: any[]): T[] => {
-  const updatedArray = [...array, ...items];
+export const push = <T>(array: T[], ...items: any[]): number => {
+  const arrayLength = array.length;
 
-  return updatedArray;
+  for (let index = 0; index < items.length; index++) {
+    const element = items[index];
+
+    array[index + arrayLength] = element;
+  }
+  return arrayLength;
 };
