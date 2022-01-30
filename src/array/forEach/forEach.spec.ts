@@ -35,6 +35,7 @@ describe('forEach function', () => {
     'should correctly return each item index and source array',
     ({ mockArray }) => {
       forEach(mockArray, (_, index, array) => {
+        expect([...mockArray]).toEqual(array);
         expect(array[index]).toEqual(mockArray[index]);
       });
     }
