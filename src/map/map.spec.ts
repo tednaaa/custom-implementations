@@ -1,6 +1,16 @@
 import { map } from './map';
 
 describe('map function', () => {
+  it('should increment the index started from zero', () => {
+    const MOCK_ARRAY = [true, 'bar', false, 4];
+    let MOCK_INDEX = 0;
+
+    map(MOCK_ARRAY, (_, index) => {
+      expect(index).toEqual(MOCK_INDEX);
+      MOCK_INDEX++;
+    });
+  });
+
   it.each`
     mockArray                         | expected
     ${[1, 2]}                         | ${['1', '2']}
